@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+	  <script src="http://10.12.58.96:8090/side/jquery-2.2.3.min.js"></script>
+	  <script src="http://10.12.58.96:8090/side/socket.io-1.4.5.js"></script>
+	  <script src="http://10.12.58.96:8090/side/client.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+		<title>Stylo writer</title>
+		<link rel="stylesheet" href="/side/index.css">
+	</head>
+	<body>
+		<div id="flexiDisplay" class="container writer">
+			<nav id="navigation">
+				<section id="navFile">
+					<p>New File</p>
+					<p>My Files</p>
+				</section>
+				<section id="navDisplayMode">
+					<p class="active" data-mode="writer">Writer</p>
+					<p data-mode="reader">Reader</p>
+					<p data-mode="validator">Validator</p>
+				</section>
+				<section class="flexSpacer">
+				</section>
+				<section id="navConnectivity">
+						<p id="navOnlineStatus">Offline</p>
+						<p id="navUserCount">No user connected</p>
+				</section>
+			</nav>
+			<header>
+				<h1 id="documentTitle" class="editable toEdit required" contenteditable="true">Untitled document</h1>
+				<h2 id="documentAbstract" class="editable toEdit required" contenteditable="true">Abstract of the document</h2>
+				<section id="authors"></section>
+				<section id="journals"></section>
+			</header>
+			<section class="main editable" contenteditable="true">
+			<p class="h1">
+				Premier paragraphe
+			</p>
+			</section>
+			<footer></footer>
+		</div>
+	</body>
+</html>

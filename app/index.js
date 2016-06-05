@@ -2,6 +2,7 @@
 const electron = require('electron');
 const app = electron.app;
 
+
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
 
@@ -16,11 +17,11 @@ function onClosed() {
 
 function createMainWindow() {
 	const win = new electron.BrowserWindow({
-		width: 600,
-		height: 400
+		width: 1280,
+		height: 780
 	});
 
-	win.loadURL(`file://${__dirname}/index.html`);
+	win.loadURL(`file://${__dirname}/clients/index.html`);
 	win.on('closed', onClosed);
 
 	return win;

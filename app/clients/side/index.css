@@ -1,0 +1,269 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.clickable{
+	cursor:pointer;
+}
+.editable{
+
+}
+.toEdit {color:#7c879b}
+
+.flexSpacer{
+	flex: 1 1 auto;
+}
+
+body > div.container > nav {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background-color: rgb(26, 24, 25);
+}
+
+body > div.container > nav > section:not(.flexSpacer) {
+	flex:0 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+body > div.container > nav > section#navDisplayMode{
+	margin-left:1em;
+}
+body > div.container > nav > section#navDisplayMode > p {
+	background-color: transparent;
+	color:#7c879b;
+}
+body > div.container > nav > section#navDisplayMode > p.active{
+	color:white;
+}
+
+body > div.container > nav > section > p {
+	margin:0;
+	padding:1em 2em;
+	color:white;
+	background-color:#3c3e48;
+	cursor:pointer;
+	border-left:1px solid rgb(26, 24, 25);
+}
+
+body > div.container > nav > section > p:first-child{
+	border-left:none;
+}
+
+#navOnlineStatus.online{
+		color:#0EDD0E;
+}
+
+/* Document Writer/reader mode */
+body > div.container.writer > header,body > div.container.reader > header,body > div.container.writer > section.main,body > div.container.reader > section.main {
+	max-width:1200px;
+	margin:auto;
+	box-sizing: border-box;
+	padding:3em;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+body > div.container.writer > header h1,body > div.container.reader > header h1 {
+	font-size: 60px;
+	font-weight: 100;
+	margin: 0.5em 0;
+	padding: 0;
+}
+body > div.container.writer > header h2,body > div.container.reader > header h2 {
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0.5em 0;
+	padding: 0;
+}
+body > div.container.writer > header > section#authors,body > div.container.reader > header > section#authors{
+	text-align: center;
+}
+
+body > div.container.writer > header > section#authors:before,body > div.container.reader > header > section#authors:before {
+		content:"by ";
+}
+body > div.container.writer > header > section#authors article:not(:last-child):not(:nth-last-child(2)):after,body > div.container.reader > header > section#authors article:not(:last-child):not(:nth-last-child(2)):after {
+		content:", ";
+}
+body > div.container.writer > header > section#authors,body > div.container.reader > header > section#authors {
+	margin-top:3em;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+body > div.container.writer > header > section#authors article,body > div.container.reader > header > section#authors article{
+	display: flex;
+	flex-wrap: nowrap;
+}
+body > div.container.writer > header > section#authors > article > p,body > div.container.reader > header > section#authors > article > p {
+	margin:0;
+}
+
+body > div.container.writer > header > section#authors > article > p.uri,body > div.container.writer > header > section#authors > article > p.role,
+body > div.container.reader > header > section#authors > article > p.uri,body > div.container.reader > header > section#authors > article > p.role {
+	display:none;
+}
+body > div.container.writer > header > section#authors > article > p.name,body > div.container.reader > header > section#authors > article > p.name {
+	margin-left:0.5em;
+}
+body > div.container.writer > header > section#authors > article > p.affiliation,body > div.container.reader > header > section#authors > article > p.affiliation {
+	margin-left:0.5em;
+}
+body > div.container.writer > header > section#authors > article > p.affiliation:before,body > div.container.reader > header > section#authors > article > p.affiliation:before {
+	content:"(";
+}
+body > div.container.writer > header > section#authors > article > p.affiliation:after,body > div.container.reader > header > section#authors > article > p.affiliation:after {
+	content:")";
+}
+body > div.container.writer > header > section#authors > #addAuthor,body > div.container.reader > header > section#authors > #addAuthor,body > div.container.writer > header > section#authors > article > i.deleteAuthor,body > div.container.reader > header > section#authors > article > i.deleteAuthor {
+	display:none;
+}
+
+
+body > div.container.writer > section.main > p {
+	position:relative;
+}
+
+body > div.container.writer > section.main > p.h1,body > div.container.reader > section.main > p.h1,body > div.container.validator > section.main > p.h1{
+	font-size:2em;
+	font-weight: bold;
+}
+body > div.container.writer > section.main > p.h2,body > div.container.reader > section.main > p.h2,body > div.container.validator > section.main > p.h2{
+	font-size:1.5em;
+	font-weight: bold;
+}
+body > div.container.writer > section.main > p.h3,body > div.container.reader > section.main > p.h3,body > div.container.validator > section.main > p.h3{
+	font-size:1em;
+	font-weight: bold;
+}
+
+body > div.container.writer > section.main > p.h1:before,body > div.container.writer > section.main > p.h2:before,body > div.container.writer > section.main > p.h3:before,body > div.container.writer > section.main > p:not(.h1):not(.h2):not(.h3):before {
+		display:block;
+		position:absolute;
+		top:0;
+		left:-2em;
+		color: #7c879b;
+		font-size: 0.8rem;
+}
+body > div.container.writer > section.main > p.h1:before{
+content:"h1";
+}
+body > div.container.writer > section.main > p.h2:before{
+content:"h2";
+}
+body > div.container.writer > section.main > p.h3:before{
+content:"h3";
+}
+body > div.container.writer > section.main > p:not(.h1):not(.h2):not(.h3):before{
+content:"p";
+}
+body > div.container.reader > header > section#journals,body > div.container.writer > header > section#journals{
+	display:none;
+}
+
+
+
+
+/* Validator display */
+
+body > div.container.validator .required.toEdit {
+	background-color:#FFd0d0;
+}
+body > div.container.validator .editable,body > div.container.validator .validatorEditable{
+	padding:0.5em;
+	border-top:1px solid #f0f0f0;
+	margin:0;
+}
+body > div.container.validator .editable:last-child{
+	border-bottom: 1px solid #f0f0f0;
+}
+
+body > div.container.validator > header:before{
+	  content: "Header";
+    display: block;
+    font-size: 2.5em;
+    margin: 1em;
+    font-weight: bold;
+}
+
+body > div.container.validator > header > h1:before {
+		content:"Title : ";
+}
+
+body > div.container.validator > header > h2:before {
+		content:"Abstract : ";
+}
+body > div.container.validator > header > section#authors:before{
+	  content: "Contributor(s)";
+    display: block;
+    font-size: 2.5em;
+    margin: 1em;
+    font-weight: bold;
+}
+body > div.container.validator > header > section#authors > article{
+	display:flex;
+	width:100%;
+}
+body > div.container.validator > header > section#authors > article > p {
+	flex:1 1 25%;
+	border-left:1px solid #f0f0f0;
+}
+
+body > div.container.validator > header > section#authors > article > i.deleteAuthor {
+	flex:0 0 auto;
+	border-left:1px solid #f0f0f0;
+	color:white;
+	background-color:#ed1c24;
+	padding:0.5em 1em;
+	border-top:1px solid #f0f0f0;
+}
+body > div.container.validator > header > section#authors > article > p:first-child{
+	border-left:none;
+}
+body > div.container.validator > header > section#authors > p#addAuthor{
+	display:inline-block;
+	padding:0.5em 1em;
+	background-color:green;
+	color:white;
+}
+body > div.container.validator > header > section#journals:before{
+	  content: "Publication(s)";
+    display: block;
+    font-size: 2.5em;
+    margin: 1em;
+    font-weight: bold;
+}
+body > div.container.validator > header > section#journals > article{
+	display:flex;
+	width:100%;
+}
+body > div.container.validator > header > section#journals > article > p {
+	flex:1 1 25%;
+	border-left:1px solid #f0f0f0;
+}
+
+body > div.container.validator > header > section#journals > article > i.deleteJournal{
+	flex:0 0 auto;
+	border-left:1px solid #f0f0f0;
+	color:white;
+	background-color:#ed1c24;
+	padding:0.5em 1em;
+	border-top:1px solid #f0f0f0;
+}
+body > div.container.validator > header > section#journals > article > p:first-child{
+	border-left:none;
+}
+body > div.container.validator > header > section#journals > p#addJournal {
+	display:inline-block;
+	padding:0.5em 1em;
+	background-color:green;
+	color:white;
+}
